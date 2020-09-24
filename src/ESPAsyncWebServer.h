@@ -22,6 +22,11 @@
 #define _ESPAsyncWebServer_H_
 
 #include "Arduino.h"
+// Note: Arduino.h may define min and max macroses that break C++ stdlib compilation
+#if defined(_LIBCPP_VERSION) || defined(__GLIBCXX__) || defined(__cpp_lib_result_of_sfinae)
+#undef max
+#undef min
+#endif // C++ stdlib
 
 #include <functional>
 #include "FS.h"

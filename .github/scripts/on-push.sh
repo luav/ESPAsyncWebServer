@@ -43,7 +43,7 @@ if [ "$BUILD_PIO" -eq 0 ]; then
 		echo "BUILDING ESP32 EXAMPLES"
 	else
 		echo "Installing ESPAsyncTCP ..."
-		git clone https://github.com/me-no-dev/ESPAsyncTCP "$ARDUINO_USR_PATH/libraries/ESPAsyncTCP" > /dev/null 2>&1
+		git clone https://github.com/luav/ESPAsyncTCP "$ARDUINO_USR_PATH/libraries/ESPAsyncTCP" > /dev/null 2>&1
 		FQBN="esp8266com:esp8266:generic:eesz=4M1M,ip=lm2f"
 		source ./.github/scripts/install-arduino-core-esp8266.sh
 		echo "BUILDING ESP8266 EXAMPLES"
@@ -64,7 +64,7 @@ else
 	else
 		BOARD="esp12e"
 		echo "Installing ESPAsyncTCP ..."
-		python -m platformio lib -g install https://github.com/me-no-dev/ESPAsyncTCP.git > /dev/null 2>&1
+		python -m platformio lib -g install https://github.com/luav/ESPAsyncTCP.git > /dev/null 2>&1
 		echo "BUILDING ESP8266 EXAMPLES"
 	fi
 	build_pio_sketches "$BOARD" "$GITHUB_WORKSPACE/examples"
